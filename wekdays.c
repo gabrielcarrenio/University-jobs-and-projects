@@ -1,12 +1,12 @@
-#include<stdio.h>   //function by extension
+#include<stdio.h>   //funcion por extencion
 #include<stdlib.h>    
-int arraywekdays[6];
-int wekdays(int d[6]);
+int arrayDay[6];
+int wekDays(int d[6]);
 int main(){
-    wekdays(arraywekdays);
+    wekDays(arrayDay);
     return 0;
 }
-int weekdays(int d[6]){
+int wekDays(int d[6]){
     for(int i=0;i<=6;i++){
         int d[i];
         switch (i)
