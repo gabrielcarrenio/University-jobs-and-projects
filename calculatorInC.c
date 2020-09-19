@@ -1,31 +1,39 @@
 #include<stdio.h>
-
+// Global lexicon //
+char operator;
+float firstNumber, secondNumber;
+void inputData(char *oper, float *fnumber, float *snumber);
+float calculate(char oper,float fnumber, float snumber);
 int main(){
 
-    char operator;
-    double firstNumber, secondNumber;
+    inputData(&operator,&firstNumber,&secondNumber);
+    calculate(operator,firstNumber,secondNumber);
 
+    return 0;
+}
+void inputData(char *oper, float *fNumber, float *sNumber){
     printf("Enter an operator (+,-,*,/) : ");
-    scanf("%c", &operator);
+    scanf("%c", &(*oper));
 
     printf("Enter operand: ");
-    scanf("%lf",&firstNumber);
+    scanf("%f",&(*fNumber));
 
     printf("Enter operand: ");
-    scanf("%lf",&secondNumber);
-
-    switch (operator){
+    scanf("%f",&(*sNumber));
+}
+float calculate(char oper,float fNumber, float sNumber){
+    switch (oper){
     case '+':
-        printf("%.1lf + %.1lf = %.1lf\n",firstNumber, secondNumber, firstNumber + secondNumber);
+        printf("%.1f + %.1f = %.1f\n",fNumber, sNumber, fNumber + sNumber);
         break;
     case '-':
-        printf("%.1lf - %.1lf = %.1lf\n",firstNumber, secondNumber, firstNumber - secondNumber);
+        printf("%.1f - %.1f = %.1f\n",fNumber, sNumber, fNumber - sNumber);
         break;
     case '*':
-        printf("%.1lf * %.1lf = %.1lf\n",firstNumber, secondNumber, firstNumber * secondNumber);
+        printf("%.1f * %.1f = %.1f\n",fNumber, sNumber, fNumber * sNumber);
         break;
     case '/':
-        printf("%.1lf / %.1lf = %.1lf\n",firstNumber, secondNumber, firstNumber / secondNumber);
+        printf("%.1f / %.1f = %.1f\n",fNumber, sNumber, fNumber / sNumber);
         break;
     default: printf("Operator is not correct!\n");
         break;
