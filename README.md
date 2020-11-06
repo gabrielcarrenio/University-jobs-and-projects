@@ -1,2 +1,1 @@
-# University-jobs-and-projects
-Works in C language...
+Language learning C
